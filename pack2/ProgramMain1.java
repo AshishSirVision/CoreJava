@@ -6,9 +6,9 @@
 package pack2;
 
 public class ProgramMain1 {
-public static void main(String[] args) {
-	
-}
+	public static void main(String[] args) {
+
+	}
 }
 /**
  * Notes Conclusion
