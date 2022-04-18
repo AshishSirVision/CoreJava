@@ -6,9 +6,12 @@
 package pack3;
 
 public class ProgramMain6 {
-public static void main(String[] args) {
-	
-}
+	{
+	System.out.println("Hello world");
+	}
+	public static void main(String[] args) {
+new ProgramMain6();
+	}
 }
 /**
  * Notes Conclusion
