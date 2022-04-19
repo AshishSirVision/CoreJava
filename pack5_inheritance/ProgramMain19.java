@@ -3,9 +3,9 @@
  * 
  *
  */
-package pack5;
+package pack5_inheritance;
 
-public class ProgramMain5 {
+public class ProgramMain19 {
 public static void main(String[] args) {
 	
 }
