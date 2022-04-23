@@ -22,7 +22,6 @@ class Cat extends Animals2 {
 	}
 }
 
-v
 
 public class ProgramMain8 {
 	public static void main(String[] args) {
