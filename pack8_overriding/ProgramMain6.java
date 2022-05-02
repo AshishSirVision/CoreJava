@@ -3,9 +3,9 @@
  * 
  *
  */
-package pack8;
+package pack8_overriding;
 
-public class ProgramMain1 {
+public class ProgramMain6 {
 public static void main(String[] args) {
 	
 }
