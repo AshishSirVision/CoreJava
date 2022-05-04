@@ -3,9 +3,9 @@
  * 
  *
  */
-package pack9;
+package pack9_super_keyword;
 
-public class ProgramMain12 {
+public class ProgramMain14 {
 public static void main(String[] args) {
 	
 }
