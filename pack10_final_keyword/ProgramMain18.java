@@ -3,9 +3,9 @@
  * 
  *
  */
-package pack10;
+package pack10_final_keyword;
 
-public class ProgramMain5 {
+public class ProgramMain18 {
 public static void main(String[] args) {
 	
 }
