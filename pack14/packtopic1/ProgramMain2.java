@@ -3,11 +3,14 @@
  * 
  *
  */
-package pack20;
+package pack14.packtopic1;
 
 public class ProgramMain2 {
 	public static void main(String[] args) {
-		System.out.println("\uD83D\uDE00");
+		ProgramMain1 obj=new ProgramMain1();
+		obj.display();
+		obj.show();
+		obj.meth1();
 	}
 }
 /**
