@@ -1,3 +1,5 @@
+package collection_demo;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -51,7 +53,7 @@ public class ArrayListObjectSortExample {
         people.sort((person1, person2) -> {
             return person1.getAge() - person2.getAge();
         });
-
+        System.out.println("Person List : " + people);
         // A more concise way of writing the above sorting function
         people.sort(Comparator.comparingInt(Person::getAge));
 

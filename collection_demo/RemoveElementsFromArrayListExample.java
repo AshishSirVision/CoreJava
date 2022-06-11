@@ -1,3 +1,5 @@
+package collection_demo;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -39,6 +41,7 @@ public class RemoveElementsFromArrayListExample {
             public boolean test(String s) {
                 return s.startsWith("C");
             }
+            
         });
 
         /*
