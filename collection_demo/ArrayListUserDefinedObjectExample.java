@@ -6,7 +6,6 @@ import java.util.List;
 class User {
     private String name;
     private int age;
-
     public User(String name, int age) {
         this.name = name;
         this.age = age;
@@ -28,7 +27,6 @@ class User {
         this.age = age;
     }
 }
-
 public class ArrayListUserDefinedObjectExample {
     public static void main(String[] args) {
         List<User> users = new ArrayList<>();
