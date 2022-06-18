@@ -3,9 +3,9 @@
  * 
  *
  */
-package pack20;
+package pack20_multithreading;
 
-public class ProgramMain3 {
+public class ProgramMain17 {
 public static void main(String[] args) {
 	
 }
