@@ -16,7 +16,7 @@ import java.io.IOException;
  */
 public class CreateFileDemo {  
     public static void main(String[] args) {  
-  for(int i=1;i<=20;i++)
+  for(int i=21;i<=25;i++)
   {
         try {  
         	File f1 = new File("src/pack"+i);  
@@ -27,7 +27,7 @@ public class CreateFileDemo {
             }else{  
                System.out.println("Error Found!");  
             } 
-            for(int j=1;j<=20;j++)
+            for(int j=1;j<=8;j++)
             {         
             File file = new File(f1+"/ProgramMain"+j+".java");  
             if (file.createNewFile()) {  

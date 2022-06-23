@@ -16,16 +16,19 @@ public class ProgramMain1 {
 	String name;//data members 2
 	
 	public static void main(String[] args) {
+		
+		
 		//Create object
-		ProgramMain1 s1=new ProgramMain1();
+		//classname objname=new classname();
+		ProgramMain1 obj=new ProgramMain1();
 		ProgramMain1 s2=new ProgramMain1();
 		ProgramMain1 s3=new ProgramMain1();
 		ProgramMain1 s4=new ProgramMain1();
 		ProgramMain1 s5=new ProgramMain1();
 		
 		//printing objects value
-		System.out.println("for Anurag :"+s1.id+" , "+s1.name);
-		System.out.println("for Gaurav :"+s2.id+" , "+s2.name);
+		System.out.println("for Neha :"+obj.id+" , "+obj.name);
+		System.out.println("for anushka :"+s2.id+" , "+s2.name);
 		
 		
 	}
