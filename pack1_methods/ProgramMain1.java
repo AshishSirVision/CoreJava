@@ -25,11 +25,11 @@ public class ProgramMain1 {
 		ProgramMain1 s3=new ProgramMain1();
 		ProgramMain1 s4=new ProgramMain1();
 		ProgramMain1 s5=new ProgramMain1();
-		
+	
 		//printing objects value
 		System.out.println("for Neha :"+obj.id+" , "+obj.name);
 		System.out.println("for anushka :"+s2.id+" , "+s2.name);
-		
+		System.out.println("for riya :"+s3.id+" , "+s3.name);	
 		
 	}
 }
