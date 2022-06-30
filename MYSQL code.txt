@@ -1,0 +1,247 @@
+
+Setting environment for using XAMPP for Windows.
+PC@DESKTOP-1Q28VPD c:\xampp1
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.21-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| akansha            |
+| db1                |
+| db2                |
+| dbpratiksha        |
+| dbs                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sms                |
+| sp                 |
+| test               |
++--------------------+
+12 rows in set (0.063 sec)
+
+MariaDB [(none)]> create database rms;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| akansha            |
+| db1                |
+| db2                |
+| dbpratiksha        |
+| dbs                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| rms                |
+| sms                |
+| sp                 |
+| test               |
++--------------------+
+13 rows in set (0.001 sec)
+
+MariaDB [(none)]> use rms;
+Database changed
+MariaDB [rms]> show tables;
+Empty set (0.001 sec)
+
+MariaDB [rms]> create table menu
+    -> (
+    -> menuname varchar(20),
+    -> price decimal(8,2),
+    -> quantity int,
+    -> mid int
+    -> );
+Query OK, 0 rows affected (0.350 sec)
+
+MariaDB [rms]> show tables;
++---------------+
+| Tables_in_rms |
++---------------+
+| menu          |
++---------------+
+1 row in set (0.001 sec)
+
+MariaDB [rms]>  desc menu;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| menuname | varchar(20)  | YES  |     | NULL    |       |
+| price    | decimal(8,2) | YES  |     | NULL    |       |
+| quantity | int(11)      | YES  |     | NULL    |       |
+| mid      | int(11)      | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+4 rows in set (0.056 sec)
+
+MariaDB [rms]> select * from menu;
+Empty set (0.177 sec)
+
+MariaDB [rms]> insert into menu
+    -> values()
+    ->
+    -> ;
+Query OK, 1 row affected (0.176 sec)
+
+MariaDB [rms]> select * from menu;
++----------+-------+----------+------+
+| menuname | price | quantity | mid  |
++----------+-------+----------+------+
+| NULL     |  NULL |     NULL | NULL |
++----------+-------+----------+------+
+1 row in set (0.000 sec)
+
+MariaDB [rms]> insert into menu
+    -> values('rice',120.453,1,111);
+Query OK, 1 row affected, 1 warning (0.099 sec)
+
+MariaDB [rms]> select * from menu;
++----------+--------+----------+------+
+| menuname | price  | quantity | mid  |
++----------+--------+----------+------+
+| NULL     |   NULL |     NULL | NULL |
+| rice     | 120.45 |        1 |  111 |
++----------+--------+----------+------+
+2 rows in set (0.000 sec)
+
+MariaDB [rms]> insert into menu
+    -> values('paneer',220.453,1,112);
+Query OK, 1 row affected, 1 warning (0.228 sec)
+
+MariaDB [rms]> select * from menu;
++----------+--------+----------+------+
+| menuname | price  | quantity | mid  |
++----------+--------+----------+------+
+| NULL     |   NULL |     NULL | NULL |
+| rice     | 120.45 |        1 |  111 |
+| paneer   | 220.45 |        1 |  112 |
++----------+--------+----------+------+
+3 rows in set (0.000 sec)
+
+MariaDB [rms]> insert into menu
+    -> values('matar chilli',12.453,1,113),('chili roti',56,2,114);
+Query OK, 2 rows affected, 1 warning (0.138 sec)
+Records: 2  Duplicates: 0  Warnings: 1
+
+MariaDB [rms]> select * from menu;
++--------------+--------+----------+------+
+| menuname     | price  | quantity | mid  |
++--------------+--------+----------+------+
+| NULL         |   NULL |     NULL | NULL |
+| rice         | 120.45 |        1 |  111 |
+| paneer       | 220.45 |        1 |  112 |
+| matar chilli |  12.45 |        1 |  113 |
+| chili roti   |  56.00 |        2 |  114 |
++--------------+--------+----------+------+
+5 rows in set (0.000 sec)
+
+MariaDB [rms]> update menu set menuname='matar paneer' where mid=113;
+Query OK, 1 row affected (0.170 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [rms]> select * from menu;
++--------------+--------+----------+------+
+| menuname     | price  | quantity | mid  |
++--------------+--------+----------+------+
+| NULL         |   NULL |     NULL | NULL |
+| rice         | 120.45 |        1 |  111 |
+| paneer       | 220.45 |        1 |  112 |
+| matar paneer |  12.45 |        1 |  113 |
+| chili roti   |  56.00 |        2 |  114 |
++--------------+--------+----------+------+
+5 rows in set (0.000 sec)
+
+MariaDB [rms]> select * from menu where mid=113;
++--------------+-------+----------+------+
+| menuname     | price | quantity | mid  |
++--------------+-------+----------+------+
+| matar paneer | 12.45 |        1 |  113 |
++--------------+-------+----------+------+
+1 row in set (0.057 sec)
+
+MariaDB [rms]> select * from menu where mid like 'm%';
+Empty set (0.057 sec)
+
+MariaDB [rms]> select * from menu where mid like '%m';
+Empty set (0.000 sec)
+
+MariaDB [rms]> select * from menu where menuname like '%m';
+Empty set (0.000 sec)
+
+MariaDB [rms]> select * from menu where menuname like 'm%';
++--------------+-------+----------+------+
+| menuname     | price | quantity | mid  |
++--------------+-------+----------+------+
+| matar paneer | 12.45 |        1 |  113 |
++--------------+-------+----------+------+
+1 row in set (0.000 sec)
+
+MariaDB [rms]> select * from menu where menuname like '%r';
++--------------+--------+----------+------+
+| menuname     | price  | quantity | mid  |
++--------------+--------+----------+------+
+| paneer       | 220.45 |        1 |  112 |
+| matar paneer |  12.45 |        1 |  113 |
++--------------+--------+----------+------+
+2 rows in set (0.000 sec)
+
+MariaDB [rms]> delete from menu where mid=NULL;
+Query OK, 0 rows affected (0.004 sec)
+
+MariaDB [rms]> select * from menu;
++--------------+--------+----------+------+
+| menuname     | price  | quantity | mid  |
++--------------+--------+----------+------+
+| NULL         |   NULL |     NULL | NULL |
+| rice         | 120.45 |        1 |  111 |
+| paneer       | 220.45 |        1 |  112 |
+| matar paneer |  12.45 |        1 |  113 |
+| chili roti   |  56.00 |        2 |  114 |
++--------------+--------+----------+------+
+5 rows in set (0.000 sec)
+
+MariaDB [rms]> delete from menu where menuname=NULL;
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [rms]> select * from menu;
++--------------+--------+----------+------+
+| menuname     | price  | quantity | mid  |
++--------------+--------+----------+------+
+| NULL         |   NULL |     NULL | NULL |
+| rice         | 120.45 |        1 |  111 |
+| paneer       | 220.45 |        1 |  112 |
+| matar paneer |  12.45 |        1 |  113 |
+| chili roti   |  56.00 |        2 |  114 |
++--------------+--------+----------+------+
+5 rows in set (0.000 sec)
+
+MariaDB [rms]> delete from menu where menuname='NULL';
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [rms]> delete from menu where menuname is NULL;
+Query OK, 1 row affected (0.145 sec)
+
+MariaDB [rms]> select * from menu;
++--------------+--------+----------+------+
+| menuname     | price  | quantity | mid  |
++--------------+--------+----------+------+
+| rice         | 120.45 |        1 |  111 |
+| paneer       | 220.45 |        1 |  112 |
+| matar paneer |  12.45 |        1 |  113 |
+| chili roti   |  56.00 |        2 |  114 |
++--------------+--------+----------+------+
+4 rows in set (0.000 sec)
+
+MariaDB [rms]>

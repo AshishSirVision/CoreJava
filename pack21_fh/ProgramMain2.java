@@ -3,31 +3,28 @@
  * 
  *
  */
-package pack21;
+package pack21_fh;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+
 import java.io.IOException;
 
-public class ProgramMain1 {
+public class ProgramMain2 {
 	public static void main(String[] args) {
 		try {
-			FileOutputStream obj=new FileOutputStream("demofile.txt");
-			for (int i = 65; i < 122; i++) {
-				
-			
-			obj.write(i);
+			FileInputStream obj = new FileInputStream("demofile.txt");
+			for (int i = 0; i < 50; i++) {
+
+				System.out.print((char) obj.read() + ", ");
 			}
 			obj.close();
-			
-			
+
 		} catch (FileNotFoundException e) {
 			System.out.println("file not found ");
 		} catch (IOException e) {
 			System.out.println("Input output exception");
 		}
-		
-		
 	}
 }
 /**

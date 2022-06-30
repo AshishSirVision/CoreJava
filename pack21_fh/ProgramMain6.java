@@ -3,9 +3,9 @@
  * 
  *
  */
-package pack23;
+package pack21_fh;
 
-public class ProgramMain5 {
+public class ProgramMain6 {
 public static void main(String[] args) {
 	
 }

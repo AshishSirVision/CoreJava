@@ -3,9 +3,9 @@
  * 
  *
  */
-package pack21;
+package pack23_enum;
 
-public class ProgramMain7 {
+public class ProgramMain4 {
 public static void main(String[] args) {
 	
 }
