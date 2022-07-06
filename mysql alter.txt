@@ -1,0 +1,187 @@
+
+ALTER TABLE `emp` CHANGE `id` `id` INT(15) , CHANGE `name` `name` VARCHAR(25);
+
+ALTER TABLE emp CHANGE id id INT(25) , CHANGE name name VARCHAR(20);
+
+ALTER TABLE emp ADD address VARCHAR(20) AFTER name;
+
+
+ALTER TABLE emp ADD address VARCHAR(30) AFTER name, ADD department VARCHAR(20)AFTER address;
+
+
+ALTER TABLE `emp` CHANGE `id` `eid` INT(15) , CHANGE `name` `name` VARCHAR(25);
+
+Setting environment for using XAMPP for Windows.
+PC@DESKTOP-1Q28VPD c:\xampp1
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.21-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database db1;
+ERROR 1007 (HY000): Can't create database 'db1'; database exists
+MariaDB [(none)]> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database' at line 1
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| akansha            |
+| bank               |
+| bitcoin            |
+| db1                |
+| db2                |
+| dbpratiksha        |
+| dbs                |
+| example            |
+| information_schema |
+| loan               |
+| login.form         |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| rh                 |
+| rms                |
+| school             |
+| schoolmanagement   |
+| sms                |
+| sp                 |
+| stockmarkets       |
+| test               |
++--------------------+
+22 rows in set (0.075 sec)
+
+MariaDB [(none)]> create database db21;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| akansha            |
+| bank               |
+| bitcoin            |
+| db1                |
+| db2                |
+| db21               |
+| dbpratiksha        |
+| dbs                |
+| example            |
+| information_schema |
+| loan               |
+| login.form         |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| rh                 |
+| rms                |
+| school             |
+| schoolmanagement   |
+| sms                |
+| sp                 |
+| stockmarkets       |
+| test               |
++--------------------+
+23 rows in set (0.001 sec)
+
+MariaDB [(none)]> create table emp
+    -> (
+    -> int id,
+    -> name varchar(20)
+    -> );
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> use db1;
+Database changed
+MariaDB [db1]> use db21;
+Database changed
+MariaDB [db21]> create table emp
+    -> (
+    -> int id,
+    -> name varchar(20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'int id,
+name varchar(20)
+)' at line 3
+MariaDB [db21]> create table emp
+    -> (
+    -> id int,
+    -> name varchar(20)
+    -> );
+Query OK, 0 rows affected (0.345 sec)
+
+MariaDB [db21]> desc emp;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | YES  |     | NULL    |       |
+| name  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.093 sec)
+
+MariaDB [db21]> select * from emp;
+Empty set (0.157 sec)
+
+MariaDB [db21]> alter table emp modify id int(15);
+Query OK, 0 rows affected (0.163 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [db21]> desc emp;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(15)     | YES  |     | NULL    |       |
+| name  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.050 sec)
+
+MariaDB [db21]> alter table emp modify id varchar(15);
+Query OK, 0 rows affected (0.734 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [db21]> desc emp;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | varchar(15) | YES  |     | NULL    |       |
+| name  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.038 sec)
+
+MariaDB [db21]> alter table emp modify( id int(15),name varchar(25));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '( id int(15),name varchar(25))' at line 1
+MariaDB [db21]> alter table emp change id int(15) change name varchar(25);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'int(15) change name varchar(25)' at line 1
+MariaDB [db21]> ALTER TABLE `emp` CHANGE `id` `id` INT(15) , CHANGE `name` `name` VARCHAR(25);
+Query OK, 0 rows affected (0.600 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [db21]> ALTER TABLE emp CHANGE id id INT(25) , CHANGE name name VARCHAR(20);
+Query OK, 0 rows affected (0.955 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [db21]> ALTER TABLE emp ADD address VARCHAR(30) AFTER name, ADD department VARCHAR(20)AFTER address;
+Query OK, 0 rows affected (0.116 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [db21]> desc emp;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int(25)     | YES  |     | NULL    |       |
+| name       | varchar(20) | YES  |     | NULL    |       |
+| address    | varchar(30) | YES  |     | NULL    |       |
+| department | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.035 sec)
+
+MariaDB [db21]>
+MariaDB [db21]> ALTER TABLE `emp` CHANGE `id` `id` INT(15) , CHANGE `name` `name` VARCHAR(25);
+Query OK, 0 rows affected (0.113 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [db21]>
