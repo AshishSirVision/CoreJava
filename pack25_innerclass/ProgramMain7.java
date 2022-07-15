@@ -3,9 +3,9 @@
  * 
  *
  */
-package pack25;
+package pack25_innerclass;
 
-public class ProgramMain3 {
+public class ProgramMain7 {
 public static void main(String[] args) {
 	
 }
