@@ -6,7 +6,7 @@
 package pack20_sync;
 
 //Understanding the problem without Synchronization
-class Resourse // TablePrint
+class Resourse1 // TablePrint
 {
 
 	synchronized void printTable(int n) {
